@@ -3,7 +3,7 @@ const Card = ({ card, onCardClick }) => {
         onCardClick(card);
     }
     return (
-        <li className="element" key={card._id}>
+        <li className="element">
             <img alt={card.name} className="element__image" src={card.link} onClick={handleClick} />
             <div className="element__title">
                 <h2 className="element__place-name">{card.name}</h2>

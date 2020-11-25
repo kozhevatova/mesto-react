@@ -37,6 +37,12 @@ function App() {
 
   return (
     <div className="page__container">
+      <Header />
+      <Main onEditProfile={handleEditProfileClick} onAddPlace={handleAddPlaceClick}
+        onEditAvatar={handleEditAvatarClick} onCardClick={handleCardClick} />
+      <Footer />
+
+
       <PopupWithForm name="edit-form" title="Редактировать профиль" buttonTitle="Сохранить"
         isOpen={isEditProfileFormOpen} onClose={closeAllPopups}>
         <input type="text" className="popup__input popup__name" name="popupName"
@@ -68,11 +74,6 @@ function App() {
       </PopupWithForm>
 
       <ImagePopup card={selectedCard} onClose={closeAllPopups} />
-
-      <Header />
-      <Main onEditProfile={handleEditProfileClick} onAddPlace={handleAddPlaceClick}
-        onEditAvatar={handleEditAvatarClick} onCardClick={handleCardClick} />
-      <Footer />
 
     </div>
   );

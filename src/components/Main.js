@@ -48,7 +48,7 @@ const Main = (props) => {
         <ul className="elements"> {
           cards.map((card) => {
             return (
-              <Card card={card} onCardClick={props.onCardClick} />
+              <Card key={card._id} card={card} onCardClick={props.onCardClick} />
             );
           })
         }
