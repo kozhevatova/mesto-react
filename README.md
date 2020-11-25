@@ -1,3 +1,38 @@
+# Проект: Место (React)
+
+### Обзор
+
+* Figma
+* Описание
+* GitHub Pages
+* Getting started with React
+
+**Figma**
+
+* [Ссылка на макет в Figma](https://www.figma.com/file/StZjf8HnoeLdiXS7dYrLAh/JavaScript.-Sprint-4)
+
+**Описание**
+
+Проект "Место" - это адаптивный одностраничный сайт про места в России. Страница сверстана с использованием flex и grid-layout. Адаптирована под разрешения 320px и выше. Используется React и хуки.
+
+Добавленные фичи:
+- получение инфо о профиле с сервера;
+- прлучение карточек для отрисовки с сервера;
+- открытие попапов при нажатии на соответствующие кнопки;
+- возможность редактирования имени и описания профиля; 
+- плавно всплывающие попапы, закрываются при нажатии на кнопку в виде крестика. 
+
+В планах:
+- обновление данных на странице;
+- возможность удаления фото;
+- возможность лайкать фото;
+- валидация форм;
+- возможность закрытия попапов при нажатии на overlay и на кнопку Esc.
+
+**GitHub Pages**
+
+* [Ссылка на проект в GitHub Pages](https://kozhevatova.github.io/mesto-react/index.html)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
