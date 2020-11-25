@@ -1,4 +1,4 @@
-const PopupImage = ({ card, onClose }) => {
+const ImagePopup = ({ card, onClose }) => {
   return (
     <div className={`popup popup_type_zoomed-image ${(card && 'popup_opened')}`}>
       <div className="popup__form popup__form_type_zoomed-image">
@@ -10,4 +10,4 @@ const PopupImage = ({ card, onClose }) => {
   );
 }
 
-export default PopupImage;
+export default ImagePopup;

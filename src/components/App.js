@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import '../App.css';
 import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
 import PopupWithForm from './PopupWithForm';
-import PopupImage from './PopupImage';
+import ImagePopup from './ImagePopup';
 
 function App() {
   const [isEditProfileFormOpen, setIsEditProfileFormOpen] = useState(false);
@@ -68,7 +67,7 @@ function App() {
         <span className="popup__input-error" id="url-input-error"></span>
       </PopupWithForm>
 
-      <PopupImage card={selectedCard} onClose={closeAllPopups} />
+      <ImagePopup card={selectedCard} onClose={closeAllPopups} />
 
       <Header />
       <Main onEditProfile={handleEditProfileClick} onAddPlace={handleAddPlaceClick}
