@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/kozhevatova/mesto-reactstatic/css/main.c2e53169.chunk.css",
-    "main.js": "/kozhevatova/mesto-reactstatic/js/main.16f64034.chunk.js",
-    "main.js.map": "/kozhevatova/mesto-reactstatic/js/main.16f64034.chunk.js.map",
-    "runtime-main.js": "/kozhevatova/mesto-reactstatic/js/runtime-main.9c383b1e.js",
-    "runtime-main.js.map": "/kozhevatova/mesto-reactstatic/js/runtime-main.9c383b1e.js.map",
-    "static/js/2.525d28a3.chunk.js": "/kozhevatova/mesto-reactstatic/js/2.525d28a3.chunk.js",
-    "static/js/2.525d28a3.chunk.js.map": "/kozhevatova/mesto-reactstatic/js/2.525d28a3.chunk.js.map",
-    "static/js/3.c0459c81.chunk.js": "/kozhevatova/mesto-reactstatic/js/3.c0459c81.chunk.js",
-    "static/js/3.c0459c81.chunk.js.map": "/kozhevatova/mesto-reactstatic/js/3.c0459c81.chunk.js.map",
-    "index.html": "/kozhevatova/mesto-reactindex.html",
-    "static/css/main.c2e53169.chunk.css.map": "/kozhevatova/mesto-reactstatic/css/main.c2e53169.chunk.css.map",
-    "static/js/2.525d28a3.chunk.js.LICENSE.txt": "/kozhevatova/mesto-reactstatic/js/2.525d28a3.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/kozhevatova/mesto-reactstatic/media/like.26ed9c4d.svg"
+    "main.css": "/static/css/main.eeab02c6.chunk.css",
+    "main.js": "/static/js/main.16f64034.chunk.js",
+    "main.js.map": "/static/js/main.16f64034.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.86396779.js",
+    "runtime-main.js.map": "/static/js/runtime-main.86396779.js.map",
+    "static/js/2.525d28a3.chunk.js": "/static/js/2.525d28a3.chunk.js",
+    "static/js/2.525d28a3.chunk.js.map": "/static/js/2.525d28a3.chunk.js.map",
+    "static/js/3.c0459c81.chunk.js": "/static/js/3.c0459c81.chunk.js",
+    "static/js/3.c0459c81.chunk.js.map": "/static/js/3.c0459c81.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.eeab02c6.chunk.css.map": "/static/css/main.eeab02c6.chunk.css.map",
+    "static/js/2.525d28a3.chunk.js.LICENSE.txt": "/static/js/2.525d28a3.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/static/media/like.26ed9c4d.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.9c383b1e.js",
+    "static/js/runtime-main.86396779.js",
     "static/js/2.525d28a3.chunk.js",
-    "static/css/main.c2e53169.chunk.css",
+    "static/css/main.eeab02c6.chunk.css",
     "static/js/main.16f64034.chunk.js"
   ]
 }
