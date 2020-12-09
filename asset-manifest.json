@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/kozhevatova/mesto-react/static/css/main.4696c3db.chunk.css",
-    "main.js": "/kozhevatova/mesto-react/static/js/main.37df8668.chunk.js",
-    "main.js.map": "/kozhevatova/mesto-react/static/js/main.37df8668.chunk.js.map",
+    "main.css": "/kozhevatova/mesto-react/static/css/main.5545db7d.chunk.css",
+    "main.js": "/kozhevatova/mesto-react/static/js/main.7dea019e.chunk.js",
+    "main.js.map": "/kozhevatova/mesto-react/static/js/main.7dea019e.chunk.js.map",
     "runtime-main.js": "/kozhevatova/mesto-react/static/js/runtime-main.bcca7d3f.js",
     "runtime-main.js.map": "/kozhevatova/mesto-react/static/js/runtime-main.bcca7d3f.js.map",
-    "static/js/2.5eed248d.chunk.js": "/kozhevatova/mesto-react/static/js/2.5eed248d.chunk.js",
-    "static/js/2.5eed248d.chunk.js.map": "/kozhevatova/mesto-react/static/js/2.5eed248d.chunk.js.map",
+    "static/js/2.807ad439.chunk.js": "/kozhevatova/mesto-react/static/js/2.807ad439.chunk.js",
+    "static/js/2.807ad439.chunk.js.map": "/kozhevatova/mesto-react/static/js/2.807ad439.chunk.js.map",
     "static/js/3.891bcf06.chunk.js": "/kozhevatova/mesto-react/static/js/3.891bcf06.chunk.js",
     "static/js/3.891bcf06.chunk.js.map": "/kozhevatova/mesto-react/static/js/3.891bcf06.chunk.js.map",
     "index.html": "/kozhevatova/mesto-react/index.html",
-    "static/css/main.4696c3db.chunk.css.map": "/kozhevatova/mesto-react/static/css/main.4696c3db.chunk.css.map",
-    "static/js/2.5eed248d.chunk.js.LICENSE.txt": "/kozhevatova/mesto-react/static/js/2.5eed248d.chunk.js.LICENSE.txt",
+    "static/css/main.5545db7d.chunk.css.map": "/kozhevatova/mesto-react/static/css/main.5545db7d.chunk.css.map",
+    "static/js/2.807ad439.chunk.js.LICENSE.txt": "/kozhevatova/mesto-react/static/js/2.807ad439.chunk.js.LICENSE.txt",
     "static/media/index.css": "/kozhevatova/mesto-react/static/media/like.26ed9c4d.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.bcca7d3f.js",
-    "static/js/2.5eed248d.chunk.js",
-    "static/css/main.4696c3db.chunk.css",
-    "static/js/main.37df8668.chunk.js"
+    "static/js/2.807ad439.chunk.js",
+    "static/css/main.5545db7d.chunk.css",
+    "static/js/main.7dea019e.chunk.js"
   ]
 }
