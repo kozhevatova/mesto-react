@@ -98,31 +98,57 @@ function App() {
       });
   }
 
+  //обработчик закрытия по нажатию Esc
+  const handleEscClose = (event) => {
+    if (event.key === 'Escape') {
+      closeAllPopups();
+    }
+  }
+
+  //обработчик закрытия попапов при нажатии по фону
+  const handleCLosePopupByClickOnOverlay = (event) => {
+    if (event.target !== event.currentTarget) {
+      return;
+    }
+  
+    closeAllPopups();
+  }
+
   //обработчик клика по кнопке удаления карточки
   const handleDeleteButtonClick = (card) => {
     //открытие попапа подтверждения удаления
     setIsConfirmDeleteFormOpen(true);
     setCardToDelete(card);
+
+    document.addEventListener('keydown', handleEscClose);
   }
 
   //обработчик открытия попапа редактирования аватара
   const handleEditAvatarClick = () => {
     setIsEditAvatarFormOpen(true);
+
+    document.addEventListener('keydown', handleEscClose);
   }
 
   //обработчик открытия попапа редактирования профиля
   const handleEditProfileClick = () => {
     setIsEditProfileFormOpen(true);
+
+    document.addEventListener('keydown', handleEscClose);
   }
 
   //обработчик открытия попапа добавления карточки
   const handleAddPlaceClick = () => {
     setIsAddPlaceFormOpen(true);
+
+    document.addEventListener('keydown', handleEscClose);
   }
 
   //обработчик открытия попапа с картинкой
   const handleCardClick = (card) => {
     setSelectedCard(card);
+
+    document.addEventListener('keydown', handleEscClose);
   }
 
   //закрытие всех попапов
@@ -132,6 +158,8 @@ function App() {
     setIsAddPlaceFormOpen(false);
     setIsConfirmDeleteFormOpen(false);
     setSelectedCard(null);
+
+    document.removeEventListener('keydown', handleEscClose);
   }
 
   //обработчик обновления инфы пользователя
@@ -172,18 +200,19 @@ function App() {
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page__container">
         <AddPlacePopup isOpen={isAddPlaceFormOpen} onClose={closeAllPopups}
-          onAddPlace={handleAddPlace} isLoading={isLoading} />
+          onAddPlace={handleAddPlace} isLoading={isLoading} onClick={handleCLosePopupByClickOnOverlay} />
 
         <ConfirmDeletePopup isOpen={isConfirmDeleteFormOpen} onClose={closeAllPopups}
-          onCardDelete={handleCardDelete} isLoading={isLoading} card={cardToDelete} />
+          onCardDelete={handleCardDelete} isLoading={isLoading} card={cardToDelete} 
+          onClick={handleCLosePopupByClickOnOverlay} />
 
         <EditAvatarPopup isOpen={isEditAvatarFormOpen} onClose={closeAllPopups}
-          onUpdateAvatar={handleUpdateAvatar} isLoading={isLoading} />
+          onUpdateAvatar={handleUpdateAvatar} isLoading={isLoading} onClick={handleCLosePopupByClickOnOverlay} />
 
         <EditProfilePopup isOpen={isEditProfileFormOpen} onClose={closeAllPopups}
-          onUpdateUser={handleUpdateUser} isLoading={isLoading} />
+          onUpdateUser={handleUpdateUser} isLoading={isLoading} onClick={handleCLosePopupByClickOnOverlay} />
 
-        <ImagePopup card={selectedCard} onClose={closeAllPopups} />
+        <ImagePopup card={selectedCard} onClose={closeAllPopups} onClick={handleCLosePopupByClickOnOverlay} />
 
         <Header />
         <Main cards={cards} onEditProfile={handleEditProfileClick} onAddPlace={handleAddPlaceClick}

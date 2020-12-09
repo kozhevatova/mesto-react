@@ -8,7 +8,7 @@ const Main = ({ cards, onEditProfile, onAddPlace, onEditAvatar,
   const currentUser = useContext(CurrentUserContext);
 
   return (
-    <main className="content">
+    <main className="content"> 
       <section className="profile">
         <div className="profile__avatar" style={{ background: `center/cover url(${currentUser.avatar}) no-repeat` }}>
           <button className="profile__edit-avatar-button"

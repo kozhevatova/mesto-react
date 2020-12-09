@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import PopupWithForm from './PopupWithForm';
 import { popupName, popupDescription } from '../utils/constants';
 
-const AddPlacePopup = ({ isOpen, onClose, onAddPlace, isLoading }) => {
+const AddPlacePopup = ({ isOpen, onClose, onAddPlace, isLoading, onClick }) => {
   const [name, setName] = useState('');
   const [link, setLink] = useState('');
 
@@ -37,7 +37,8 @@ const AddPlacePopup = ({ isOpen, onClose, onAddPlace, isLoading }) => {
 
   return (
     <PopupWithForm name="add-form" title="Новое место" buttonTitle={isLoading ?
-      "Создание..." : "Создать"} isOpen={isOpen} onClose={onClose} onSubmit={handleAddPlaceSubmit} >
+      "Создание..." : "Создать"} isOpen={isOpen} onClose={onClose} onSubmit={handleAddPlaceSubmit}
+      onClick={onClick} >
       <input type="text" className="popup__input popup__name" name="popupName"
         placeholder="Название" required id="title-input" minLength="2" maxLength="30"
         value={name} onChange={handleInputChange} />

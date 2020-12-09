@@ -33,7 +33,7 @@ const Card = ({ card, onCardClick, onCardLike, onCardDelete }) => {
     }
 
     return (
-        <li className="element">
+        <>
             <img alt={card.name} className="element__image" src={card.link} onClick={handleClick} />
             <div className="element__title">
                 <h2 className="element__place-name">{card.name}</h2>
@@ -46,7 +46,7 @@ const Card = ({ card, onCardClick, onCardLike, onCardDelete }) => {
 
             <button className={cardDeleteButtonClassName} type="button" aria-label="Удалить фото."
                 onClick={handleDeleteClick}></button>
-        </li>
+        </>
     );
 }
 

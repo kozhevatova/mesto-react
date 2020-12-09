@@ -9,7 +9,7 @@ const PopupWithForm = (props) => {
   }, []);
 
   return (
-    <div className={`popup popup_type_${props.name} ${props.isOpen && 'popup_opened'}`}>
+    <div className={`popup popup_type_${props.name} ${props.isOpen && 'popup_opened'}`} onClick={props.onClick}>
       <form className={`popup__form popup__form_type_${props.name}`} method="POST" name={props.name}
         onSubmit={props.onSubmit} ref={formRef} >
         <button className="popup__close-button" type="reset"

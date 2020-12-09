@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import PopupWithForm from './PopupWithForm';
 
-const EditAvatarPopup = ({isOpen, onClose, onUpdateAvatar, isLoading}) => {
+const EditAvatarPopup = ({isOpen, onClose, onUpdateAvatar, isLoading, onClick}) => {
   const inputRef = useRef();
 
   //очистка поля ввода при открытии попапа
@@ -22,7 +22,8 @@ const EditAvatarPopup = ({isOpen, onClose, onUpdateAvatar, isLoading}) => {
 
   return (
     <PopupWithForm name="edit-avatar" title="Обновить аватар" buttonTitle={isLoading ? 
-      "Сохранение..." : "Сохранить"} isOpen={isOpen} onClose={onClose} onSubmit={handleSubmit}>
+      "Сохранение..." : "Сохранить"} isOpen={isOpen} onClose={onClose} onSubmit={handleSubmit} 
+      onClick={onClick} >
       <input type="url" className="popup__input popup__description" name="avatarUrl"
         placeholder="Ссылка на аватар" required id="url-input" ref={inputRef}/>
       <span className="popup__input-error" id="url-input-error"></span>

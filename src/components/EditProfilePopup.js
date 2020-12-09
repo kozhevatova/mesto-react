@@ -3,7 +3,7 @@ import PopupWithForm from './PopupWithForm';
 import { popupName, popupDescription } from '../utils/constants';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 
-const EditProfilePopup = ({ isOpen, onClose, onUpdateUser, isLoading }) => {
+const EditProfilePopup = ({ isOpen, onClose, onUpdateUser, isLoading, onClick }) => {
   const currentUser = useContext(CurrentUserContext);
 
   const [name, setName] = useState('');
@@ -39,7 +39,7 @@ const EditProfilePopup = ({ isOpen, onClose, onUpdateUser, isLoading }) => {
 
   return (
     <PopupWithForm name="edit-form" title="Редактировать профиль" buttonTitle={isLoading ? 'Сохранение...' : 'Сохранить'}
-      isOpen={isOpen} onClose={onClose} onSubmit={handleSubmit}>
+      isOpen={isOpen} onClose={onClose} onSubmit={handleSubmit} onClick={onClick}>
       <input type="text" className="popup__input popup__name" name="popupName"
         placeholder="Имя" required id="name-input" minLength="2" maxLength="40"
         onChange={handleInputChange} value={name} />
