@@ -1,12 +1,12 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
-import api from '../utils/api';
 import Card from './Card';
+import Spinner from './Spinner';
 
-const Main = ({cards, onEditProfile, onAddPlace, onEditAvatar, 
-    onCardClick, onCardLike, onCardDelete}) => {
+const Main = ({ cards, onEditProfile, onAddPlace, onEditAvatar,
+  onCardClick, onCardLike, onCardDelete, isLoading }) => {
   const currentUser = useContext(CurrentUserContext);
-  
+
   return (
     <main className="content">
       <section className="profile">
@@ -28,14 +28,18 @@ const Main = ({cards, onEditProfile, onAddPlace, onEditAvatar,
 
       <div>
         <ul className="elements"> {
-          cards.map((card) => {
-            return (
-              <li className="element" key={card._id}>
-                <Card card={card} onCardClick={onCardClick} onCardLike={onCardLike} 
-                  onCardDelete={onCardDelete}/>
-              </li>
-            );
-          })
+          isLoading ? (
+            <Spinner />
+          ) : (
+              cards.map((card) => {
+                return (
+                  <li className="element" key={card._id}>
+                    <Card card={card} onCardClick={onCardClick} onCardLike={onCardLike}
+                      onCardDelete={onCardDelete} />
+                  </li>
+                );
+              })
+            )
         }
         </ul>
       </div>
