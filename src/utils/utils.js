@@ -1,12 +1,11 @@
-import { buttonLoadingText } from './constants.js';
+import FormValidator from '../components/FormValidator';
+import { validationConfig } from './constants';
 
-//Изменение текста кнопки сохранения во время загрузки
-const renderLoading = (button, isLoading, text) => {
-  if (isLoading) {
-    button.text = buttonLoadingText;
-  } else {
-    button.text = text;
-  }
-}
+// включить валидацию формы
+const validateForm = (form) => {
+  const formValidator = new FormValidator(validationConfig, form);
+  formValidator.enableValidation();
+  return formValidator;
+};
 
-export { renderLoading };
+export { validateForm };

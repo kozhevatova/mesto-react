@@ -8,14 +8,18 @@ const EditProfilePopup = ({ isOpen, onClose, onUpdateUser, isLoading }) => {
 
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
-
+  
+  //присвоение полям попапа значений и при открытии попапа, и при изменении данных пользователя
   useEffect(() => {
-    setName(currentUser.name);
-    setDescription(currentUser.about);
-  }, [currentUser]);
+    if (isOpen) {
+      setName(currentUser.name);
+      setDescription(currentUser.about);
+    }
+  }, [currentUser, isOpen]);
 
+  //запись в стейт текущие значения инпутов при вводе
   const handleInputChange = (e) => {
-    switch(e.target.name) {
+    switch (e.target.name) {
       case popupName: setName(e.target.value);
         break;
       case popupDescription: setDescription(e.target.value);
@@ -25,7 +29,8 @@ const EditProfilePopup = ({ isOpen, onClose, onUpdateUser, isLoading }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
+    //отправка данных в API 
     onUpdateUser({
       name,
       about: description
@@ -37,11 +42,11 @@ const EditProfilePopup = ({ isOpen, onClose, onUpdateUser, isLoading }) => {
       isOpen={isOpen} onClose={onClose} onSubmit={handleSubmit}>
       <input type="text" className="popup__input popup__name" name="popupName"
         placeholder="Имя" required id="name-input" minLength="2" maxLength="40"
-        onChange={handleInputChange} value={name}/>
+        onChange={handleInputChange} value={name} />
       <span className="popup__input-error" id="name-input-error"></span>
       <input type="text" className="popup__input popup__description" name="popupDescription"
         placeholder="О себе" required id="description-input" minLength="2" maxLength="200"
-        onChange={handleInputChange} value={description}/>
+        onChange={handleInputChange} value={description} />
       <span className="popup__input-error" id="description-input-error"></span>
     </PopupWithForm>
   );

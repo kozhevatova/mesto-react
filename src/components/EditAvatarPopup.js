@@ -1,15 +1,25 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import PopupWithForm from './PopupWithForm';
 
 const EditAvatarPopup = ({isOpen, onClose, onUpdateAvatar, isLoading}) => {
   const inputRef = useRef();
 
+  //очистка поля ввода при открытии попапа
+  useEffect(() => {
+    if(isOpen) {
+      inputRef.current.value = '';
+    }
+  }, [isOpen]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    //отправка данных в API
     onUpdateAvatar({
       avatar: inputRef.current.value
     })
   }
+
   return (
     <PopupWithForm name="edit-avatar" title="Обновить аватар" buttonTitle={isLoading ? 
       "Сохранение..." : "Сохранить"} isOpen={isOpen} onClose={onClose} onSubmit={handleSubmit}>

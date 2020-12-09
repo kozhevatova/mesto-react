@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from 'react';
-// import '../App.css';
 import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
-import PopupWithForm from './PopupWithForm';
 import PopupImage from './PopupImage';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 import api from '../utils/api';
 import EditProfilePopup from './EditProfilePopup';
 import EditAvatarPopup from './EditAvatarPopup';
 import AddPlacePopup from './AddPlacePopup';
-import Spinner from './Spinner';
 import ConfirmDeletePopup from './ConfirmDeletePopup';
+import validateForm from './FormValidator';
 
 function App() {
   //#region стейты
@@ -165,6 +163,7 @@ function App() {
         setIsLoading(false);
       })
   }
+
   //#endregion
 
   return (
@@ -172,9 +171,6 @@ function App() {
       <div className="page__container">
         <AddPlacePopup isOpen={isAddPlaceFormOpen} onClose={closeAllPopups}
           onAddPlace={handleAddPlace} isLoading={isLoading} />
-
-        {/* <PopupWithForm name="delete-confirm" title="Вы уверены?" buttonTitle="Да"
-          isOpen={false} onClose={closeAllPopups} /> */}
 
         <ConfirmDeletePopup isOpen={isConfirmDeleteFormOpen} onClose={closeAllPopups}
           onCardDelete={handleCardDelete} isLoading={isLoading} card={cardToDelete} />
