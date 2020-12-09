@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
-import PopupImage from './PopupImage';
+import ImagePopup from './ImagePopup';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 import api from '../utils/api';
 import EditProfilePopup from './EditProfilePopup';
@@ -24,11 +24,11 @@ function App() {
   const [isAddPlaceFormOpen, setIsAddPlaceFormOpen] = useState(false);
   const [isEditAvatarFormOpen, setIsEditAvatarFormOpen] = useState(false);
   const [isConfirmDeleteFormOpen, setIsConfirmDeleteFormOpen] = useState(false);
+
   //#endregion
 
   //#region эффекты
   //получение данных о пользователе с сервера и присвоение этих данных контексту
-
   useEffect(() => {
     setIsLoading(true);
     Promise.all([
@@ -98,7 +98,9 @@ function App() {
       });
   }
 
+  //обработчик клика по кнопке удаления карточки
   const handleDeleteButtonClick = (card) => {
+    //открытие попапа подтверждения удаления
     setIsConfirmDeleteFormOpen(true);
     setCardToDelete(card);
   }
@@ -181,7 +183,7 @@ function App() {
         <EditProfilePopup isOpen={isEditProfileFormOpen} onClose={closeAllPopups}
           onUpdateUser={handleUpdateUser} isLoading={isLoading} />
 
-        <PopupImage card={selectedCard} onClose={closeAllPopups} />
+        <ImagePopup card={selectedCard} onClose={closeAllPopups} />
 
         <Header />
         <Main cards={cards} onEditProfile={handleEditProfileClick} onAddPlace={handleAddPlaceClick}
