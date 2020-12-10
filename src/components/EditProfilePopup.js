@@ -24,6 +24,9 @@ const EditProfilePopup = ({ isOpen, onClose, onUpdateUser, isLoading, onClick })
         break;
       case popupDescription: setDescription(e.target.value);
         break;
+      default: 
+        console.log(`Нет такого инпута: ${e.target.name}`);
+        break;
     }
   }
 

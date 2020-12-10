@@ -33,10 +33,8 @@ const Main = ({ cards, onEditProfile, onAddPlace, onEditAvatar,
           ) : (
               cards.map((card) => {
                 return (
-                  <li className="element" key={card._id}>
-                    <Card card={card} onCardClick={onCardClick} onCardLike={onCardLike}
+                    <Card card={card} key={card._id} onCardClick={onCardClick} onCardLike={onCardLike}
                       onCardDelete={onCardDelete} />
-                  </li>
                 );
               })
             )

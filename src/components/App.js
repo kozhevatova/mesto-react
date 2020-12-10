@@ -78,6 +78,9 @@ function App() {
         //поставляя в него новую карточку
         const newCards = cards.map((c) => c._id === card._id ? newCard : c);
         setCards(newCards);
+      })
+      .catch((err) => {
+        console.log(err);
       });
   }
 
@@ -114,41 +117,49 @@ function App() {
     closeAllPopups();
   }
 
+  const setEscListener = () => {
+    document.addEventListener('keydown', handleEscClose);
+  }
+
+  const removeEscListener = () => {
+    document.removeEventListener('keydown', handleEscClose);
+  }
+
   //обработчик клика по кнопке удаления карточки
   const handleDeleteButtonClick = (card) => {
     //открытие попапа подтверждения удаления
     setIsConfirmDeleteFormOpen(true);
     setCardToDelete(card);
 
-    document.addEventListener('keydown', handleEscClose);
+    setEscListener();
   }
 
   //обработчик открытия попапа редактирования аватара
   const handleEditAvatarClick = () => {
     setIsEditAvatarFormOpen(true);
 
-    document.addEventListener('keydown', handleEscClose);
+    setEscListener();
   }
 
   //обработчик открытия попапа редактирования профиля
   const handleEditProfileClick = () => {
     setIsEditProfileFormOpen(true);
 
-    document.addEventListener('keydown', handleEscClose);
+    setEscListener();
   }
 
   //обработчик открытия попапа добавления карточки
   const handleAddPlaceClick = () => {
     setIsAddPlaceFormOpen(true);
 
-    document.addEventListener('keydown', handleEscClose);
+    setEscListener();
   }
 
   //обработчик открытия попапа с картинкой
   const handleCardClick = (card) => {
     setSelectedCard(card);
 
-    document.addEventListener('keydown', handleEscClose);
+    setEscListener();
   }
 
   //закрытие всех попапов
@@ -159,7 +170,7 @@ function App() {
     setIsConfirmDeleteFormOpen(false);
     setSelectedCard(null);
 
-    document.removeEventListener('keydown', handleEscClose);
+    removeEscListener();
   }
 
   //обработчик обновления инфы пользователя
@@ -199,6 +210,12 @@ function App() {
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page__container">
+        <Header />
+        <Main cards={cards} onEditProfile={handleEditProfileClick} onAddPlace={handleAddPlaceClick}
+          onEditAvatar={handleEditAvatarClick} onCardClick={handleCardClick}
+          onCardLike={handleCardLike} onCardDelete={handleDeleteButtonClick} isLoading={isLoading} />
+        <Footer />
+
         <AddPlacePopup isOpen={isAddPlaceFormOpen} onClose={closeAllPopups}
           onAddPlace={handleAddPlace} isLoading={isLoading} onClick={handleCLosePopupByClickOnOverlay} />
 
@@ -213,12 +230,6 @@ function App() {
           onUpdateUser={handleUpdateUser} isLoading={isLoading} onClick={handleCLosePopupByClickOnOverlay} />
 
         <ImagePopup card={selectedCard} onClose={closeAllPopups} onClick={handleCLosePopupByClickOnOverlay} />
-
-        <Header />
-        <Main cards={cards} onEditProfile={handleEditProfileClick} onAddPlace={handleAddPlaceClick}
-          onEditAvatar={handleEditAvatarClick} onCardClick={handleCardClick}
-          onCardLike={handleCardLike} onCardDelete={handleDeleteButtonClick} isLoading={isLoading} />
-        <Footer />
 
       </div>
     </CurrentUserContext.Provider>

@@ -22,6 +22,9 @@ const AddPlacePopup = ({ isOpen, onClose, onAddPlace, isLoading, onClick }) => {
         break;
       case popupDescription: setLink(e.target.value);
         break;
+      default:
+        console.log(`Нет такого инпута: ${e.target.name}`);
+        break;
     }
   }
 
